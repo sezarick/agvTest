@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\AGVState">
+      <UniqueIdentifier>{600de7f3-0e90-4bf5-8a3d-c9fc7906e4a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AGVState">
+      <UniqueIdentifier>{0db1074d-83c0-4f6a-b56d-b44db00f61df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\InputModule">
+      <UniqueIdentifier>{87fff972-df56-40d0-821d-2833a79a246e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\InputModule">
+      <UniqueIdentifier>{6f6479a9-7b8a-4d88-9c35-2ca09b094735}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CommandStack">
+      <UniqueIdentifier>{261ec96d-f411-4138-b7df-83796a23966e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CommandStack">
+      <UniqueIdentifier>{57ea9edd-77ed-4108-8dc4-e09ac24fa23b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestAGV.ino" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__vm\.TestAGV.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AGVBody.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AGVState.h">
+      <Filter>Header Files\AGVState</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementState.h">
+      <Filter>Header Files\AGVState</Filter>
+    </ClInclude>
+    <ClInclude Include="InputMain.h">
+      <Filter>Header Files\InputModule</Filter>
+    </ClInclude>
+    <ClInclude Include="Communicate.h">
+      <Filter>Header Files\InputModule</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitingState.h">
+      <Filter>Header Files\AGVState</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputeModule.h">
+      <Filter>Header Files\CommandStack</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandModule.h">
+      <Filter>Header Files\CommandStack</Filter>
+    </ClInclude>
+    <ClInclude Include="MapData.h">
+      <Filter>Header Files\CommandStack</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AGVBody.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AGVState.cpp">
+      <Filter>Source Files\AGVState</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementState.cpp">
+      <Filter>Source Files\AGVState</Filter>
+    </ClCompile>
+    <ClCompile Include="InputMain.cpp">
+      <Filter>Source Files\InputModule</Filter>
+    </ClCompile>
+    <ClCompile Include="Communicate.cpp">
+      <Filter>Source Files\InputModule</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitingState.cpp">
+      <Filter>Source Files\AGVState</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputeModule.cpp">
+      <Filter>Source Files\CommandStack</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandModule.cpp">
+      <Filter>Source Files\CommandStack</Filter>
+    </ClCompile>
+    <ClCompile Include="MapData.cpp">
+      <Filter>Source Files\CommandStack</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
