@@ -4,12 +4,14 @@
 
 #include "MovementState.h"
 
+
 //명령어에 따른 실행부
 void Movement::executeCommand(CommandType comm) {
 	switch (comm)
 	{
 	case CommandType::STOP:
 		Stop();
+		
 		break;
 	case CommandType::SIGNAL_WAITING:
 		Stop();
@@ -37,27 +39,47 @@ void Movement::executeCommand(CommandType comm) {
 ////////////////////////////////////
 
 void MovementPassive::Stop() {
-
+	Serial.println("Stop");
+	analogWrite(pinPwmR, 0);
+	digitalWrite(pinDirR, LOW);
+	analogWrite(pinPwmL, 0);
+	digitalWrite(pinDirL, HIGH);
 }
 
 void MovementPassive::StraightGo() {
 	//수동 직진
-	Serial.println("pSG");
+	Serial.println("Straghit Go");
+	analogWrite(pinPwmR, speed_L);
+	digitalWrite(pinDirR, LOW);
+	analogWrite(pinPwmL, speed_R);
+	digitalWrite(pinDirL, HIGH);
 }
 
 void MovementPassive::TurnLeft() {
 	//수동 좌회전
-	Serial.println("pTL");
+	Serial.println("Turn Left");
+	analogWrite(pinPwmR, speed_L);
+	digitalWrite(pinDirR, LOW);
+	analogWrite(pinPwmL, speed_R);
+	digitalWrite(pinDirL, LOW);
 }
 
 void MovementPassive::TurnRight() {
 	//수동 우회전
-	Serial.println("pTR");
+	Serial.println("Turn Right");
+	analogWrite(pinPwmR, speed_L);
+	digitalWrite(pinDirR, HIGH);
+	analogWrite(pinPwmL, speed_R);
+	digitalWrite(pinDirL, HIGH);
 }
 
 void MovementPassive::BackWard() {
 	//수동 후진
-	Serial.println("pBW");
+	Serial.println("BackWard");
+	analogWrite(pinPwmR, iSpeed1);
+	digitalWrite(pinDirR, HIGH);
+	analogWrite(pinPwmL, iSpeed2);
+	digitalWrite(pinDirL, LOW);
 }
 
 

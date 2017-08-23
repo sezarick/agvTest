@@ -6,13 +6,13 @@
 
 
 InputModule::InputModule() {
-
+	BtModule = new BTModule();
 }
 
 InputModule::~InputModule() {
-
+	if (BtModule) delete BtModule;
 }
 
-String InputModule::getInput() {
-	return "";
+char InputModule::getInput() {
+	return BtModule->ReadBTData();
 }

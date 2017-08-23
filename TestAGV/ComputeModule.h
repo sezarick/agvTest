@@ -11,8 +11,6 @@
 	#include "WProgram.h"
 #endif
 
-
-
 enum class StateType {
 	WAITINGPASSIVE,
 	WAITINGAUTO,
@@ -20,11 +18,9 @@ enum class StateType {
 	MOVEMENTAUTO
 };
 
-
 class ComputeModule{
 public:
 	
-
 private:
 	StackList<Command> *commandList = NULL;
 	AGVState *agvState = NULL;
@@ -39,12 +35,12 @@ public:
 	~ComputeModule();
 	
 	void inputCheck(String);		//인풋이 바뀌면 명령 내려주기 위함 - 이녀석내부에서 계속 인풋을 통한걸 체크
-
+	StateType getState() { return currentState; }
 
 private:
 
-
 	ConditionType calculateCommand(String input);
+	void exeCommand(String);
 	void setagvState(StateType type);
 	void agvCommExe(CommandType comm) { if(currentCommand) agvState->Execute(comm); }
 };

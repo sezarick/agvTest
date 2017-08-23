@@ -6,7 +6,7 @@
 #if defined(ARDUINO) && ARDUINO >= 100
 	#include "arduino.h"
 #include "Communicate.h"
-#include <SoftwareSerial.h>
+
 
 #else
 	#include "WProgram.h"
@@ -20,12 +20,13 @@ public:
 	
 
 private:
+	BTModule* BtModule;
 
 public:
 		InputModule();
 		~InputModule();
 
-		String getInput();
+		char getInput();
 private:
 };
 

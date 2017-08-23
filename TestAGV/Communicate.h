@@ -8,6 +8,7 @@
 #include <QueueList.h>
 #include <StackList.h>
 #include <LinkedList.h>
+#include <SoftwareSerial.h>
 #else
 	#include "WProgram.h"
 #endif
@@ -15,6 +16,22 @@
 
 class CommunicateModuel {
 
+};
+
+
+
+
+//패시브 일때만 객체 생성 및 활동
+class BTModule : public CommunicateModuel {
+public:
+	BTModule();
+	~BTModule();
+	char ReadBTData();
+
+private:
+	String buffData, currentData;
+	char buffChar, currentChar;
+	SoftwareSerial* BTSerial = NULL;
 };
 
 
@@ -27,17 +44,6 @@ public:
 
 private:
 
-};
-
-//패시브 일때만 객체 생성 및 활동
-class BTModule : public CommunicateModuel {
-public:
-	String buffData, currentData;
-
-	void ReadBTData();
-
-private:
-	
 };
 
 #endif

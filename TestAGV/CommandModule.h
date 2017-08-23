@@ -17,6 +17,7 @@
 
 
 enum class ConditionType {
+	NOTHING,
 	TIMESET,	
 	MEET_BRANCH,
 	MEET_ENDPOINT,

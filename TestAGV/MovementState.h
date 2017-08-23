@@ -13,7 +13,7 @@
 
 class Movement : public State{
 public:
-	int iSpeed;
+
 	unsigned long iTime;
 
 	virtual void executeCommand(CommandType comm) override;
@@ -29,7 +29,17 @@ public:
 
 class MovementPassive : public Movement {
 public:
-
+	int iSpeed1 = 200, iSpeed2 = 200, speed_L = 200, speed_R = 200;
+	int pinPwmR = 6;
+	int pinPwmL = 5;
+	int pinDirR = 7;
+	int pinDirL = 4;
+	MovementPassive() {
+		pinMode(pinPwmR, OUTPUT);
+		pinMode(pinDirR, OUTPUT);
+		pinMode(pinPwmL, OUTPUT);
+		pinMode(pinDirL, OUTPUT);
+	}
 private:
 	virtual void Stop() override;
 	virtual void StraightGo() override;

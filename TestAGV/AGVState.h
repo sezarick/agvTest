@@ -20,8 +20,11 @@ enum class CommandType {
 
 class State {
 
+
+
 public:
 	virtual void executeCommand(CommandType comm) = 0;
+
 
 	
 };

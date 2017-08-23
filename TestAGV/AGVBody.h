@@ -17,10 +17,12 @@ class AGVBody {
 public:
 	AGVBody();
 	~AGVBody();
-	ComputeModule computeModule;
+	
+	void Progress();
 
 private:
-
+	ComputeModule* computeModule = NULL;
+	InputModule* inputModule = NULL;
 };
 
 #endif
