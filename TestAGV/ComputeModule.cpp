@@ -99,14 +99,18 @@ void ComputeModule::exeCommand(String inputString) {
 		comT = CommandType::STOP;
 		Serial.println("change to watitingauto");
 	}
-	else if (inputString.equals("S")) {
-		setagvState(StateType::MOVEMENTPASSIVE);
+	else if(inputString.equals("P")){
+		setagvState(StateType::WAITINGPASSIVE);
 		comT = CommandType::STOP;
-		Serial.println("change to watitingpassive");
+		Serial.println("change to waitingPassive");
 	}
-	else{
+	else {
 		if (currentState == StateType::WAITINGPASSIVE || currentState == StateType::MOVEMENTPASSIVE) {
-			if (inputString.equals("U")) {
+			if (inputString.equals("S") || inputString.equals(NULL)) {
+				setagvState(StateType::MOVEMENTPASSIVE);
+				comT = CommandType::STOP;
+			}
+			else if (inputString.equals("U")) {
 				setagvState(StateType::MOVEMENTPASSIVE);
 				comT = CommandType::STRAIGHT_GO;
 			}

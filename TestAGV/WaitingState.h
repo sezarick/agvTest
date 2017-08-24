@@ -15,12 +15,23 @@ public:
 	virtual void executeCommand(CommandType comm) override;
 
 private:
+	virtual void Stop() = 0;
 };
 
 class WaitingStatePassive : public WaitingState {
 public:
-
+	int pinPwmR = 6;
+	int pinPwmL = 5;
+	int pinDirR = 7;
+	int pinDirL = 4;
+	WaitingStatePassive() {
+		pinMode(pinPwmR, OUTPUT);
+		pinMode(pinDirR, OUTPUT);
+		pinMode(pinPwmL, OUTPUT);
+		pinMode(pinDirL, OUTPUT);
+	}
 private:
+	virtual void Stop() override;
 
 };
 
