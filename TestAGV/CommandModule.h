@@ -9,6 +9,7 @@
 	#include "MovementState.h"
 	#include "WaitingState.h"
 #include <StackList.h>
+#include "MapData.h"
 
 #else
 	#include "WProgram.h"
@@ -24,7 +25,6 @@ enum class ConditionType {
 	MEET_NFCPOINT,
 	NEW_INPUT
 };
-
 
 class Command {
 
@@ -53,22 +53,16 @@ public:
 
 class Route {
 
-
 };
-
 
 class CommandModule {
 public:
 
-	
 private:
-
-	
 
 public:
 	CommandModule();
 	~CommandModule();
-
 
 private:
 

@@ -4,7 +4,6 @@
 
 #include "AGVBody.h"
 
-
 AGVBody::AGVBody() {
 	computeModule = new ComputeModule();
 	inputModule = new InputModule();
