@@ -20,20 +20,12 @@ enum class CommandType {
 
 class State {
 
-
-
 public:
-	virtual void executeCommand(CommandType comm) = 0;
-
-
-	
+	virtual void executeCommand(CommandType comm) = 0;	
 };
 
 
 class AGVState {
-private:
-	CommandType comm = CommandType::STOP;
-	State* pState;
 
 public:
 	AGVState(State* state) : pState(state) { }
@@ -41,9 +33,11 @@ public:
 
 	void setState(State* state) { if (pState) delete pState; pState = state; }
 	void Execute(CommandType comm) { pState->executeCommand(comm); }
-public:
 
-	
+private:
+	CommandType comm = CommandType::STOP;
+	State* pState;
+
 
 };
 

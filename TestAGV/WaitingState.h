@@ -20,10 +20,6 @@ private:
 
 class WaitingStatePassive : public WaitingState {
 public:
-	int pinPwmR = 6;
-	int pinPwmL = 5;
-	int pinDirR = 7;
-	int pinDirL = 4;
 	WaitingStatePassive() {
 		pinMode(pinPwmR, OUTPUT);
 		pinMode(pinDirR, OUTPUT);
@@ -33,13 +29,29 @@ public:
 private:
 	virtual void Stop() override;
 
+private:
+	int pinPwmR = 6;
+	int pinPwmL = 5;
+	int pinDirR = 7;
+	int pinDirL = 4;
 };
 
 class WaitingStateAuto : public WaitingState {
 public:
+	WaitingStateAuto() {
+		pinMode(pinPwmR, OUTPUT);
+		pinMode(pinDirR, OUTPUT);
+		pinMode(pinPwmL, OUTPUT);
+		pinMode(pinDirL, OUTPUT);
+	}
+private:
+	virtual void Stop() override;
 
 private:
-
+	int pinPwmR = 6;
+	int pinPwmL = 5;
+	int pinDirR = 7;
+	int pinDirL = 4;
 };
 #endif
 

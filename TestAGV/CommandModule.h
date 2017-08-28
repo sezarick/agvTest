@@ -8,7 +8,6 @@
 	#include "AGVState.h"
 	#include "MovementState.h"
 	#include "WaitingState.h"
-#include <StackList.h>
 #include "MapData.h"
 
 #else
@@ -51,21 +50,18 @@ public:
 
 };
 
-class Route {
-
-};
 
 class CommandModule {
-public:
-
-private:
-
 public:
 	CommandModule();
 	~CommandModule();
 
 private:
 
+public:
+
+private:
+	MapData mapData;
 };
 
 

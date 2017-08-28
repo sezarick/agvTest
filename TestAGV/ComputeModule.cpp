@@ -6,7 +6,7 @@
 
 
 ComputeModule::ComputeModule() {
-	commandList = new StackList<Command>();
+
 	agvState = new AGVState(new WaitingStatePassive());
 	currentState = StateType::WAITINGPASSIVE;
 	currentCommand = new Command(CommandType::SIGNAL_WAITING, ConditionType::NEW_INPUT);
@@ -14,7 +14,7 @@ ComputeModule::ComputeModule() {
 }
 
 ComputeModule::~ComputeModule() {
-	commandList->~StackList();
+
 	if (agvState) delete agvState;
 	if (currentCommand) delete currentCommand;
 	if (inputModule) delete inputModule;

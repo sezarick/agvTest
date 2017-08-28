@@ -12,11 +12,6 @@
 #endif
 
 class Movement : public State{
-public:
-
-	unsigned long iTime;
-
-	virtual void executeCommand(CommandType comm) override;
 
 public:
 	virtual void Stop() = 0;
@@ -24,16 +19,15 @@ public:
 	virtual void TurnLeft() = 0;
 	virtual void TurnRight() = 0;
 	virtual void BackWard() = 0;
+
+public:
+	unsigned long iTime;
+	virtual void executeCommand(CommandType comm) override;
 };
 
 
 class MovementPassive : public Movement {
 public:
-	int iSpeed1 = 200, iSpeed2 = 200, speed_L = 200, speed_R = 200;
-	int pinPwmR = 6;
-	int pinPwmL = 5;
-	int pinDirR = 7;
-	int pinDirL = 4;
 	MovementPassive() {
 		pinMode(pinPwmR, OUTPUT);
 		pinMode(pinDirR, OUTPUT);
@@ -46,6 +40,13 @@ private:
 	virtual void TurnLeft() override;
 	virtual void TurnRight() override;
 	virtual void BackWard() override;
+
+private:
+	int iSpeed1 = 200, iSpeed2 = 200, speed_L = 200, speed_R = 200;
+	int pinPwmR = 6;
+	int pinPwmL = 5;
+	int pinDirR = 7;
+	int pinDirL = 4;
 };
 
 class MovementAuto : public Movement {

@@ -25,5 +25,13 @@ void WaitingStatePassive::Stop() {
 	digitalWrite(pinDirR, LOW);
 	analogWrite(pinPwmL, 0);
 	digitalWrite(pinDirL, HIGH);
+}
+
+void WaitingStateAuto::Stop() {
+	Serial.println("Stop");
+	analogWrite(pinPwmR, 0);
+	digitalWrite(pinDirR, LOW);
+	analogWrite(pinPwmL, 0);
+	digitalWrite(pinDirL, HIGH);
 
 }

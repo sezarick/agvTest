@@ -14,20 +14,16 @@
 
 
 class InputModule{
-
-public:
-	
-	
-
-private:
-	BTModule* BtModule;
-
 public:
 		InputModule();
 		~InputModule();
 
 		char getInput();
 private:
+
+public:
+private:
+	BTModule* BtModule;
 };
 
 	

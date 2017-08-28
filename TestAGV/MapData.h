@@ -6,7 +6,7 @@
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "arduino.h"
 #include <LinkedList.h>
-#include <StackList.h>
+
 #else
 	#include "WProgram.h"
 #endif
@@ -18,27 +18,43 @@ enum class PositionState {
 	BASE,
 	ETC
 };
+class NodeData;
+class linkedInfo;
 
 class linkedInfo {
 public:
-	linkedInfo(int startDeg, NodeData* node): degree(startDeg), nodeData(node) {}
+	linkedInfo() {}
+	~linkedInfo() {}
+	linkedInfo(int startDeg, NodeData* node) { degree = startDeg; nodeData = node; }
+public:
+	int getDegree() { return degree; }
+	NodeData* getnodeData() { return nodeData; }
 
 private:
 	int degree;
 	NodeData* nodeData;
+	String commend;
 };
+
 
 class NodeData {
 public:
+	NodeData();
 	NodeData(String, PositionState);
 	~NodeData();
 
-	bool setlinkedNode(linkedInfo* link) { linkedNode->add(*link); }
+	void setlinkedNode(linkedInfo);
+
+
+public:
+	String getName() { return name; }
+	PositionState getState() { return pState; }
+	linkedInfo getlinkedData(int index) { if(linkedData.size() > index) return linkedData.get(index); }
 
 private:
 	String name;
 	PositionState pState;
-	LinkedList<linkedInfo> *linkedNode;	
+	LinkedList<linkedInfo> linkedData = LinkedList<linkedInfo>();
 };
 
 
@@ -46,12 +62,13 @@ class MapData {
 public:
 	MapData();
 	~MapData();
+	void InitializeNode();
 
 private:
-	LinkedList<NodeData> *nodes;
 
-	void InitializeNode();
 	void InitializeLink();
+	LinkedList<NodeData> nodeData;
+
 };
 #endif
 

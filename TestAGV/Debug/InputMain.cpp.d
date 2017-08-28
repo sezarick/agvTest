@@ -13,9 +13,5 @@ C:\Users\smsong\AppData\Local\Temp\VMBuilds\TestAGV\mega_atmega2560\Debug\InputM
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\variants\mega/pins_arduino.h \
  C:\Users\smsong\AppData\Local\Temp\VMBuilds\TestAGV\mega_atmega2560\Debug\Communicate.h \
- C:\Users\smsong\Documents\Arduino\libraries\QueueList/QueueList.h \
- C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Arduino.h \
- C:\Users\smsong\Documents\Arduino\libraries\StackList/StackList.h \
- C:\Users\smsong\Documents\Arduino\libraries\LinkedList-1.2.3/LinkedList.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\libraries\SoftwareSerial\src/SoftwareSerial.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Stream.h

@@ -5,18 +5,25 @@
 #include "MapData.h"
 
 
+NodeData::NodeData() {
+
+}
+
 NodeData::NodeData(String nodeName, PositionState nodeState) {
-	linkedNode = new LinkedList<linkedInfo>();
-	
+
+
 	name = nodeName;
 	pState = nodeState;
 }
 
 NodeData::~NodeData() {
-	if (linkedNode) delete linkedNode;
+
 }
 
+void NodeData::setlinkedNode(linkedInfo link) {
 
+	linkedData.add(link);
+}
 
 
 MapData::MapData() {
@@ -24,36 +31,43 @@ MapData::MapData() {
 }
 
 MapData::~MapData() {
-	if (nodes->size > 0) nodes->clear();
+	nodeData.~LinkedList();
 }
 
 void MapData::InitializeNode() {
-	nodes = new LinkedList<NodeData>();
-
 	NodeData A("A", PositionState::ENDPOINT);
+	nodeData.add(A);
 	NodeData B("B", PositionState::ENDPOINT);
-	NodeData C("Base", PositionState::BASE);
-	NodeData D("IC", PositionState::BRANCH);
-
-	nodes->add(A);
-	nodes->add(B);
-	nodes->add(C);
-	nodes->add(D);
+	nodeData.add(B);
+	NodeData C("IC", PositionState::ENDPOINT);
+	nodeData.add(C);
+	NodeData D("BASE", PositionState::ENDPOINT);
+	nodeData.add(D);
+	InitializeLink();
 }
 
 void MapData::InitializeLink() {
-	
-	NodeData A = nodes->get(0);
-	NodeData B = nodes->get(1);
-	NodeData BASE = nodes->get(2);
-	NodeData IC = nodes->get(3);
-    
+	NodeData temp[4];
+	temp[0] = nodeData.get(0);
+	temp[1] = nodeData.get(1);
+	temp[2] = nodeData.get(2);
+	temp[3] = nodeData.get(3);
+	linkedInfo lines[4];
+	lines[0] = linkedInfo(0, &temp[3]);
+	lines[1] = linkedInfo(90, &temp[2]);
+	lines[2] = linkedInfo(180, &temp[1]);
+	lines[3] = linkedInfo(270, &temp[0]);
 
-	nodes->get(0).setlinkedNode(new linkedInfo(0, &IC));
-	nodes->get(1).setlinkedNode(new linkedInfo(180, &IC));
-	nodes->get(2).setlinkedNode(new linkedInfo(270, &IC));
-	nodes->get(3).setlinkedNode(new linkedInfo(0, &B));
-	nodes->get(3).setlinkedNode(new linkedInfo(90, &BASE));
-	nodes->get(3).setlinkedNode(new linkedInfo(180, &A));
+	for (int i = 0; i < 4; i++) {
+		temp[i].setlinkedNode(lines[i]);
+	}
+
+
+	for (int i = 0; i < 4; i++) {
+		Serial.println(temp[i].getName() + " start");
+		Serial.println(temp[i].getlinkedData(0).getnodeData()->getName() + " arrive");
+	}
+
+
 }
 

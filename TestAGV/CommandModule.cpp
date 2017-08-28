@@ -6,7 +6,7 @@
 
 
 CommandModule::CommandModule() {
-	
+	mapData.InitializeNode();
 
 }
 

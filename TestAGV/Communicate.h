@@ -5,9 +5,6 @@
 
 #if defined(ARDUINO) && ARDUINO >= 100
 	#include "arduino.h"
-#include <QueueList.h>
-#include <StackList.h>
-#include <LinkedList.h>
 #include <SoftwareSerial.h>
 #else
 	#include "WProgram.h"
