@@ -27,23 +27,9 @@ void setup() {
 
 	Serial.println("InitSuccess");
 
-	LinkedList<String> temp = LinkedList<String>();
+	AGVBody::myDegree = 0;
+	AGVBody::currentLocation = "BASE";
 
-	temp.add("0");
-	temp.add("1");
-	temp.add("2");
-	temp.add("3");
-	temp.add("4");
-
-	for (int i = 0; i < temp.size(); i++) {
-		Serial.println(temp.get(i));
-	}
-
-	temp.remove(0);
-
-	for (int i = 0; i < temp.size(); i++) {
-		Serial.println(temp.get(i));
-	}
 }
 
 // the loop function runs over and over again until power down or reset

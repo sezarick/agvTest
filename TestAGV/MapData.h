@@ -33,7 +33,7 @@ public:
 private:
 	int degree;
 	NodeData* nodeData;
-	String commend;
+	
 };
 
 

@@ -55,10 +55,14 @@ class CommandModule {
 public:
 	CommandModule();
 	~CommandModule();
+	LinkedList<Command> calculateCommand();
+
 
 private:
+	LinkedList<NodeData> calculateRoute(String, String);
 
 public:
+	
 
 private:
 	MapData mapData;

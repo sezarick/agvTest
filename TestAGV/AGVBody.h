@@ -19,7 +19,8 @@ public:
 	~AGVBody();
 	
 	void Progress();
-
+	static int myDegree;
+	static String currentLocation;
 private:
 	ComputeModule* computeModule = NULL;
 	InputModule* inputModule = NULL;
